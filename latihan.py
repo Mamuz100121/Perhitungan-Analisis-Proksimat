@@ -77,7 +77,7 @@ if (selected == 'Menghitung Kadar Karbohidrat'):
 
     if konversi_titran:
        Titran = (Blanko-Titrasi)*(Normalitas/0.1)
-       st.success(f'Volume Tio 0,1 N adalah {Titran} %')
+       st.success(f'Volume Tio 0,1 N adalah {Titran} ml')
 
     col1, col2, col3 = st.columns(3)
     with col1:
