@@ -51,13 +51,12 @@ if (selected == 'Menghitung Kadar Protein'):
     Titrasi = st.number_input ('Masukkan titrat yang digunakan pada titrasi sampel (mL)', format="%0.2f")
     Blanko = st.number_input ('Masukkan titrat yang digunakan pada titrasi blanko (mL)', format="%0.2f")
     Normalitas_titrat = st.number_input ('Masukkan normalitas larutan baku yang digunakan (N)', format="%0.4f")
-    Faktor_pengenceran = st.number_input('Masukkan faktor pengenceran', format="%0.2f")
     Faktor_konversi = st.number_input('Masukkan faktor konversi protein', format="%0.2f")
     Berat_bahan = st.number_input ('Masukkan berat sampel yang digunakan (gram)', format="%0.4f")
     konversi_protein = st.button ('Hitung Kadar Protein Kasar')
 
     if konversi_protein:
-        Nitrogen = (((Titrasi-Blanko)*Normalitas_titrat*14.008*Faktor_pengenceran)/Berat_bahan*1000)*100
+        Nitrogen = (((Titrasi-Blanko)*Normalitas_titrat*14.008)/(Berat_bahan*1000))*100
         konversi_protein = Nitrogen*Faktor_konversi
         st.success(f'Kadar kadar protein kasar pada sampel adalah {konversi_protein} %')
 
